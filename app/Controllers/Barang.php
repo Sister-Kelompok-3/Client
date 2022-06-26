@@ -12,6 +12,7 @@ class Barang extends ResourceController
 
     public function __construct()
     {
+
         $this->parent::__construct();
         $this->API = "http://localhost:8080/barang";
         $this->load->library('session');
@@ -24,9 +25,22 @@ class Barang extends ResourceController
     // all users
     public function index()
     {
+        // $barang = new BarangModel();
+        // $data = $barang->getBarang();
+        // return view('barang', compact('data'));
         // $model = new BarangModel();
         // $data['barang'] = $model->orderBy('kode_barang', 'DESC')->findAll();
         // return $this->respond($data);
+
+        // $model = new BarangModel();
+        // $barang = $this->$model->findAll();
+        // $data = [
+        //     'barang' => '$barang'
+        // ];
+        // return view('dashboard', $data);
+        $model = new BarangModel();
+        $data['barang'] = $model->orderBy('kode_barang', 'DESC')->findAll();
+        return $this->respond($data);
     }
     // create
     public function create()
@@ -51,7 +65,7 @@ class Barang extends ResourceController
     public function show($kode_barang = null)
     {
         $model = new BarangModel();
-        $data = $model->where('kode_barang', $kode_barang)->first();
+        $data = $model->getWhere(['kode_barang'], $kode_barang)->first();
         if ($data) {
             return $this->respond($data);
         } else {

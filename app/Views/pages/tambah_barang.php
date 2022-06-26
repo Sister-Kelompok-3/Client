@@ -15,9 +15,17 @@
         <label for="jumlah">jumlah</label>
         <input type="text" class="form-control" id="jumlah" name="jumlah">
     </div>
+    <div class="form-group">
+        <label for="jumlah">lokasi</label>
+        <input type="text" class="form-control" id="jumlah" name="jumlah">
+    </div>
+    <div class="form-group">
+        <label for="jumlah">tanggal</label>
+        <input type="text" class="form-control" id="jumlah" name="jumlah">
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="http://localhost:8080/dashboard?">
-        <button type="button" class="btn btn-danger" href="<?= base_url('http://localhost:8080/dashboard?') ?>">kembali</button>
+    <a href="http://localhost:8080">
+        <button type="button" class="btn btn-danger" href="<?= base_url('http://localhost:8080') ?>">kembali</button>
     </a>
 
 </form>

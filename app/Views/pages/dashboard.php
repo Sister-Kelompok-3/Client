@@ -8,7 +8,9 @@
         <div class="col">
             <h1 class="mt-2">Daftar Barang</h1>
             <table class="table">
-                <button class="btn btn-primary mb-2">Tambah Barang</button>
+                <a href="/add_barang">
+                    <button class="btn btn-primary mb-2">Tambah Barang</button>
+                </a>
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -19,14 +21,20 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Barang</td>
+                        <td>kg</td>
+                        <td>100</td>
+                        <td>
+                            <a href="" class="btn btn-success">Detail</a>
+                        </td>
+                    </tr>
                     <!-- plug eror di sini -->
-                    <td class="kode_barang">1</td>
+                    <!-- <td class="kode_barang">1</td>
                     <td class="nama_barang">Sosis</td>
                     <td class="satuan">pcs</td>
-                    <td class="jumlah">2000</td>
-                    <td>
-                        <a href="" class="btn btn-success">Detail</a>
-                    </td>
+                    <td class="jumlah">2000</td> -->
                 </tbody>
             </table>
         </div>
