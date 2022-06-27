@@ -14,30 +14,28 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="<?= base_url() ?>">Home</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <div class="container m-1">
+            <a class="navbar-brand text-primary" href="<?= base_url() ?>">Dashboard</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('about') ?>">About</a>
+                        <a class="nav-link text-primary" href="<?= base_url('about') ?>">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('contact') ?>">Contact</a>
+                        <a class="nav-link text-primary" href="<?= base_url('contact') ?>">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('faqs') ?>">Faqs</a>
+                        <a class="nav-link text-primary" href=" <?= base_url('faqs') ?>">Faqs</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <?= $this->renderSection('content') ?>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
