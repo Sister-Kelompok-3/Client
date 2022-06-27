@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-light">
         <div class="container m-1">
             <a class="navbar-brand text-primary" href="<?= base_url() ?>">Dashboard</a>

@@ -12,4 +12,8 @@ class Home extends BaseController
     {
         return view('pages/tambah_barang');
     }
+    public function server()
+    {
+        return view('client');
+    }
 }

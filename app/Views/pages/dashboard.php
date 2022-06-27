@@ -11,31 +11,17 @@
                 <a href="/add_barang">
                     <button class="btn btn-primary mb-2">Tambah Barang</button>
                 </a>
-                <thead>
+                <table class="table table-hover">
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nama Barang</th>
-                        <th scope="col">Satuan</th>
-                        <th scope="col">Jumlah Stok</th>
-                        <th scope="col">Action</th>
+                        <th width='10%'>No</th>
+                        <th width='40%'>Nama Barang</th>
+                        <th width='20%'>satuan</th>
+                        <th width='20%'>stok</th>
+                        <th width='20%'>Action</th>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Barang</td>
-                        <td>kg</td>
-                        <td>100</td>
-                        <td>
-                            <a href="" class="btn btn-success">Detail</a>
-                        </td>
-                    </tr>
-                    <!-- plug eror di sini -->
-                    <!-- <td class="kode_barang">1</td>
-                    <td class="nama_barang">Sosis</td>
-                    <td class="satuan">pcs</td>
-                    <td class="jumlah">2000</td> -->
-                </tbody>
+
+                </table>
+
             </table>
         </div>
     </div>
