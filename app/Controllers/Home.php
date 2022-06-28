@@ -8,4 +8,16 @@ class Home extends BaseController
     {
         return view('pages/dashboard');
     }
+    public function barang()
+    {
+        return view('pages/page_daftar_barang');
+    }
+    public function transaksi()
+    {
+        return view('pages/transaksi_masuk');
+    }
+    public function tambah_barang()
+    {
+        return view('pages/tambah_barang');
+    }
 }

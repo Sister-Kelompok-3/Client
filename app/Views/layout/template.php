@@ -5,38 +5,127 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <script src="https://unpkg.com/feather-icons"></script>
     <title>Dashboard</title>
+    <style>
+        #side_nav {
+            background: black;
+            min-width: 250px;
+            max-width: 250px;
+
+        }
+
+        .content {
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .u-line {
+            background-color: whitesmoke;
+        }
+
+        .sidebar li.active {
+            background-color: white;
+            border-radius: 10px;
+
+        }
+
+        .sidebar li.active a,
+        .sidebar li.active a:hover {
+            color: grey;
+        }
+
+        .sidebar li a {
+            color: white;
+        }
+    </style>
+    <script>
+        $(".sidebar ul li").on('click',
+            function() {
+                $(".sidebar li.active").removeClass('active');
+                $(this).addClass('active');
+
+            })
+    </script>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="<?= base_url() ?>">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('about') ?>">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('contact') ?>">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('faqs') ?>">Faqs</a>
-                    </li>
-                </ul>
+    <div class="main-container d-flex">
+        <div class="sidebar row" id="side_nav">
+            <div class="header-box px-2 pt-3 pb-4">
+                <h1 class="fs-4">
+                    <span class="text-white rounded shadow px-2">F</span>
+                </h1>
+                <!-- btn tdk muncul -->
+                <button class="btn close-btn px-1 py-0 text-dark">
+                    <i class="fal fa-stream"></i>
+                </button>
             </div>
-        </div>
-    </nav>
+            <ul class="list-unstyled px-2 pt-3 pb-4">
+                <li class="active">
+                    <a href="" class="text-decoration-none px-3 py-2 d-block">
+                        <i class="fa-solid fa-house"></i>Beranda</a>
+                </li>
+                <li class="">
+                    <a href="" class="text-decoration-none px-3 py-2 d-block">
+                        <i class="bi bi-house-door-fill"></i>Daftar Barang</a>
+                </li>
+                <li class="">
+                    <a href="" class="text-decoration-none px-3 py-2 d-block">
+                        <i class="bi bi-house-door-fill"></i>Transaksi Masuk</a>
+                </li>
+                </li>
+                <li class="">
+                    <a href="" class="text-decoration-none px-3 py-2 d-block">
+                        <i class="bi bi-house-door-fill"></i>Transaksi Keluar</a>
+                </li>
+                <li class="">
+                    <a href="" class="text-decoration-none px-3 py-2 d-block">
+                        <i class="bi bi-house-door-fill"></i>User</a>
+                </li>
+                <li class="">
+                    <a href="" class="text-decoration-none px-3 py-2 d-block">
+                        <i class="bi bi-house-door-fill"></i>LogOut</a>
+                </li>
 
-    <?= $this->renderSection('content') ?>
+            </ul>
+            <hr class="u-line mx-2">
+        </div>
+
+        <div class="d-blok ">
+            <div class="row align-items-start">
+
+                <nav class="navbar bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand">Navbar</a>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="content ">
+                    <?= $this->renderSection('content') ?>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

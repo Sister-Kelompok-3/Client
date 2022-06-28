@@ -4,23 +4,16 @@ namespace App\Controllers;
 
 class Barang extends BaseController
 {
-    var $API = "";
 
-    public function __construct()
-    {
-        $this->parent::__construct();
-        $this->API = "http://localhost:8080/barang";
-        $this->load->library('session');
-        $this->load->library('curl');
-        $this->load->helper('form');
-        $this->load->helper('url');
-    }
-
-    // menampilkan data kontak
     function index()
     {
-        $data['datakontak'] = json_decode($this->curl->simple_get($this->API . '/kontak'));
-        $this->load->view('kontak/list', $data);
+        $get_url = file_get_contents("localhost:8080/barang");
+        $data = json_decode($get_url);
+
+        $data_array = array(
+            'datalist' => $data
+        );
+        $this->load->view('page/dashboard', $data_array);
     }
 
     // insert data kontak
