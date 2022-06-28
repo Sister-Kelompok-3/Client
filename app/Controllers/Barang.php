@@ -8,40 +8,18 @@ use App\Models\BarangModel;
 
 class Barang extends ResourceController
 {
-    var $API = "";
 
-    public function __construct()
+    function index()
     {
+        $get_url = file_get_contents("localhost:8080/barang");
+        $data = json_decode($get_url);
 
-        $this->parent::__construct();
-        $this->API = "http://localhost:8080/barang";
-        $this->load->library('session');
-        $this->load->library('curl');
-        $this->load->helper('form');
-        $this->load->helper('url');
+        $data_array = array(
+            'datalist' => $data
+        );
+        $this->load->view('page/dashboard', $data_array);
     }
 
-    use ResponseTrait;
-    // all users
-    public function index()
-    {
-        // $barang = new BarangModel();
-        // $data = $barang->getBarang();
-        // return view('barang', compact('data'));
-        // $model = new BarangModel();
-        // $data['barang'] = $model->orderBy('kode_barang', 'DESC')->findAll();
-        // return $this->respond($data);
-
-        // $model = new BarangModel();
-        // $barang = $this->$model->findAll();
-        // $data = [
-        //     'barang' => '$barang'
-        // ];
-        // return view('dashboard', $data);
-        $model = new BarangModel();
-        $data['barang'] = $model->orderBy('kode_barang', 'DESC')->findAll();
-        return $this->respond($data);
-    }
     // create
     public function create()
     {
