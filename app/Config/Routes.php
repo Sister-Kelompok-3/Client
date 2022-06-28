@@ -40,6 +40,7 @@ $routes->get('/barang', 'Home::barang');
 $routes->get('/transaksi', 'Home::transaksi');
 $routes->get('/add_barang', 'Home::tambah_barang');
 
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
