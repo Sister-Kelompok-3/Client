@@ -28,7 +28,7 @@ $data = json_decode($konten, true);
 
         </div>
 
-        <div class="row overflow-auto container" style="height: 70vh;">
+        <div class="row overflow-auto container">
             <table class="table table-hover ">
                 <thead>
                     <tr>

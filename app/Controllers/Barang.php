@@ -23,6 +23,23 @@ class Barang extends ResourceController
     // create
     public function create()
     {
+<<<<<<< HEAD
+        if (isset($_POST['submit'])) {
+            $data = array(
+                'nama_barang'      =>  $this->input->post('nama_barang'),
+                'satuan'           =>  $this->input->post('satuan'),
+                'stok'             =>  $this->input->post('stok')
+            );
+            $insert =  $this->curl->simple_post($this->API . 'http://localhost:8080/add_barang', $data, array(CURLOPT_BUFFERSIZE => 10));
+            if ($insert) {
+                $this->session->set_flashdata('hasil', 'Insert Data Berhasil');
+            } else {
+                $this->session->set_flashdata('hasil', 'Insert Data Gagal');
+            }
+            redirect('barang');
+        } else {
+            $this->load->view('home/page');
+=======
         $model = new BarangModel();
         $data = [
             'nama_barang'   => $this->request->getVar('nama_barang'),
@@ -48,6 +65,7 @@ class Barang extends ResourceController
             return $this->respond($data);
         } else {
             return $this->failNotFound('Data tidak ditemukan.');
+>>>>>>> f4c77cd8f43d685742b595aacedc08525682ec85
         }
     }
     // update
