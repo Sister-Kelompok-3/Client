@@ -30,7 +30,7 @@ $data = json_decode($konten, true);
                 Daftar Barang
             </h2>
             <div class="ml-3  d-grid gap-2 d-md-block">
-                <a href="/add_barang">
+                <a href="/form_barang">
 
                     <button class="btn btn-primary" type="button">
                         <span class="material-symbols-outlined">

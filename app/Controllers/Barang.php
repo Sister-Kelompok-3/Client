@@ -21,20 +21,19 @@ class Barang extends BaseController
     {
         if (isset($_POST['submit'])) {
             $data = array(
-                'kode_barang'       =>  $this->input->post('kode_barang'),
                 'nama_barang'      =>  $this->input->post('nama_barang'),
-                'satuan' =>  $this->input->post('satuan'),
-                'stok' =>  $this->input->post('stok')
+                'satuan'           =>  $this->input->post('satuan'),
+                'stok'             =>  $this->input->post('stok')
             );
-            $insert =  $this->curl->simple_post($this->API . '/kontak', $data, array(CURLOPT_BUFFERSIZE => 10));
+            $insert =  $this->curl->simple_post($this->API . 'http://localhost:8080/add_barang', $data, array(CURLOPT_BUFFERSIZE => 10));
             if ($insert) {
                 $this->session->set_flashdata('hasil', 'Insert Data Berhasil');
             } else {
                 $this->session->set_flashdata('hasil', 'Insert Data Gagal');
             }
-            redirect('kontak');
+            redirect('barang');
         } else {
-            $this->load->view('kontak/create');
+            $this->load->view('home/page');
         }
     }
 

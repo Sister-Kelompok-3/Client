@@ -21,25 +21,28 @@
     <form id="content" class="bg-white p-3 ">
         <div class="form-row">
             <div class="form-group col-md-9">
-                <label for="inputAddress">Nama Barang</label>
-                <input type="text" class="form-control" id="inputAddress">
+                <label>
+                    Nama Barang
+                    <input class="form-control" type="text" name="nama_barang">
+                </label>
             </div>
-            <div class="form-row col-md-5 mr-2 ml-1">
-                <label for="inputPassword4">Jumlah</label>
-                <input type="text" class="form-control" id="inputPassword4">
+            <div class="form-row col-md-5 ">
+                <label>
+                    Jumlah
+                    <input class="form-control" type="text" name="stok">
+                </label>
             </div>
-            <div class="form-row col-md-3 mr-2 ">
-                <label for="inputEmail4">Satuan</label>
-                <input type="text" class="form-control" id="inputEmail4">
+            <div class="form-row col-md-3  ">
+                <label>
+                    satuan
+                    <input class="form-control" type="text" name="satuan">
+                </label>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">Lokasi</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="/proses_add">
+
+            <button type="submit" class="btn btn-primary">Save</button>
+        </a>
     </form>
 
 
