@@ -52,6 +52,7 @@
 
 <body>
 
+
     <div class="main-container d-flex">
         <div class="sidebar row" id="side_nav">
             <div class="header-box px-2 pt-3 pb-4">
@@ -94,6 +95,7 @@
             <hr class="u-line mx-2">
         </div>
 
+
         <div class="d-blok ">
             <div class="row align-items-start">
 
@@ -114,10 +116,6 @@
 
             </div>
 
-
-
-
-
         </div>
     </div>
 
@@ -126,6 +124,10 @@
 
 
 
+
+
+    </nav>
+    <?= $this->renderSection('content') ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

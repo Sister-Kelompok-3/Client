@@ -2,7 +2,11 @@
 
 namespace App\Controllers;
 
-class Barang extends BaseController
+use CodeIgniter\RESTful\ResourceController;
+use CodeIgniter\API\ResponseTrait;
+use App\Models\BarangModel;
+
+class Barang extends ResourceController
 {
 
     function index()
@@ -16,9 +20,10 @@ class Barang extends BaseController
         $this->load->view('page/dashboard', $data_array);
     }
 
-    // insert data kontak
-    function create()
+    // create
+    public function create()
     {
+<<<<<<< HEAD
         if (isset($_POST['submit'])) {
             $data = array(
                 'nama_barang'      =>  $this->input->post('nama_barang'),
@@ -34,45 +39,72 @@ class Barang extends BaseController
             redirect('barang');
         } else {
             $this->load->view('home/page');
+=======
+        $model = new BarangModel();
+        $data = [
+            'nama_barang'   => $this->request->getVar('nama_barang'),
+            'satuan'        => $this->request->getVar('satuan'),
+            'stok'          => $this->request->getVar('stok'),
+        ];
+        $model->insert($data);
+        $response = [
+            'status'    => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data produk berhasil ditambahkan.'
+            ]
+        ];
+        return $this->respondCreated($response);
+    }
+    // single user
+    public function show($kode_barang = null)
+    {
+        $model = new BarangModel();
+        $data = $model->getWhere(['kode_barang'], $kode_barang)->first();
+        if ($data) {
+            return $this->respond($data);
+        } else {
+            return $this->failNotFound('Data tidak ditemukan.');
+>>>>>>> f4c77cd8f43d685742b595aacedc08525682ec85
         }
     }
-
-    // edit data kontak
-    function edit()
+    // update
+    public function update($kode_barang = null)
     {
-        if (isset($_POST['submit'])) {
-            $data = array(
-                'id'       =>  $this->input->post('id'),
-                'nama'      =>  $this->input->post('nama'),
-                'nomor' =>  $this->input->post('nomor')
-            );
-            $update =  $this->curl->simple_put($this->API . '/kontak', $data, array(CURLOPT_BUFFERSIZE => 10));
-            if ($update) {
-                $this->session->set_flashdata('hasil', 'Update Data Berhasil');
-            } else {
-                $this->session->set_flashdata('hasil', 'Update Data Gagal');
-            }
-            redirect('kontak');
-        } else {
-            $params = array('id' =>  $this->uri->segment(3));
-            $data['datakontak'] = json_decode($this->curl->simple_get($this->API . '/kontak', $params));
-            $this->load->view('kontak/edit', $data);
-        }
+        $model = new BarangModel();
+        $kode_barang = $this->request->getVar('kode_barang');
+        $data = [
+            'nama_barang'   => $this->request->getVar('nama_barang'),
+            'satuan'        => $this->request->getVar('satuan'),
+            'stok'          => $this->request->getVar('stok'),
+        ];
+        $model->update($kode_barang, $data);
+        $response = [
+            'status'        => 200,
+            'error'         => null,
+            'messages'      => [
+                'success'   => 'Data produk berhasil diubah.'
+            ]
+        ];
+        return $this->respond($response);
     }
-
-    // delete data kontak
-    function delete($id)
+    // delete
+    public function delete($kode_barang = null)
     {
-        if (empty($id)) {
-            redirect('kontak');
+        $model = new BarangModel();
+        $data = $model->delete($kode_barang);
+        if ($data) {
+            $model->delete($kode_barang);
+            $response = [
+                'status'   => 200,
+                'error'    => null,
+                'messages' => [
+                    'success' => 'Data produk berhasil dihapus.'
+                ]
+            ];
+            return $this->respondDeleted($response);
         } else {
-            $delete =  $this->curl->simple_delete($this->API . '/kontak', array('id' => $id), array(CURLOPT_BUFFERSIZE => 10));
-            if ($delete) {
-                $this->session->set_flashdata('hasil', 'Delete Data Berhasil');
-            } else {
-                $this->session->set_flashdata('hasil', 'Delete Data Gagal');
-            }
-            redirect('kontak');
+            return $this->failNotFound('Data tidak ditemukan.');
         }
     }
 }

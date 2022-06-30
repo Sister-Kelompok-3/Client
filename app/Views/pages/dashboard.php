@@ -56,9 +56,6 @@ $data = json_decode($konten, true);
 
             </table>
         </div>
-
-
-
     </div>
 </div>
 

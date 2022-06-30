@@ -8,6 +8,7 @@ class Home extends BaseController
     {
         return view('pages/dashboard');
     }
+
     public function barang()
     {
         return view('pages/page_daftar_barang');
@@ -19,5 +20,7 @@ class Home extends BaseController
     public function tambah_barang()
     {
         return view('pages/tambah_barang');
+=======
+    
     }
 }

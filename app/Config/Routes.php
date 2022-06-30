@@ -42,6 +42,7 @@ $routes->get('/form_barang', 'Home::tambah_barang');
 $routes->get('/proses_add', 'barang::create');
 
 
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
