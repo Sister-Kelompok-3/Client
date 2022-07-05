@@ -7,7 +7,7 @@
     }
 </style>
 <?php
-$detail = file_get_contents('http://localhost:8080/detail_transaksi');
+$detail = file_get_contents('http://localhost:8080/transaksi_detail');
 $data = json_decode($detail, true);
 // var_dump($konten);
 
@@ -27,14 +27,16 @@ $data = json_decode($detail, true);
     <div class="row content bg-white p-2 ">
         <div class="grid">
             <h2 class="m-3">
-                Daftar Transaksi Masuk
+                Daftar Transaksi
             </h2>
             <div class="ml-3  d-grid gap-2 d-md-block">
-                <button class="btn btn-primary" type="button">
-                    <span class="material-symbols-outlined">
-                        create_new_folder
-                    </span>
-                </button>
+                <a href="/form_transaksi_masuk">
+                    <button class="btn btn-primary" type="button">
+                        <span class="material-symbols-outlined">
+                            create_new_folder
+                        </span>
+                    </button>
+                </a>
 
             </div>
         </div>
@@ -46,9 +48,6 @@ $data = json_decode($detail, true);
                         <th>#</th>
                         <th>Id Transaksi</th>
                         <th>Kode Barang</th>
-                        <th>nama Barang</th>
-                        <th>Tanggal</th>
-                        <th>Lokasi</th>
                         <th>Jumlah</th>
                         <th>
                             Action
@@ -75,7 +74,6 @@ $data = json_decode($detail, true);
                                     <span class="material-symbols-outlined">
                                         delete
                                     </span>
-
                                 </button>
                             </td>
                         </tr>
@@ -85,10 +83,8 @@ $data = json_decode($detail, true);
 
             </table>
         </div>
-
-
-
     </div>
+
 </div>
 
 

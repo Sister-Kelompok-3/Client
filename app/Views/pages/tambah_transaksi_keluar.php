@@ -1,9 +1,7 @@
 <?php
-$nama_barang = null;
-$jumlah = null;
-$satuan = null;
+$lokasi = null;
 $tanggal = null;
-$lokasi = null
+
 ?>
 
 <?= $this->extend('layout/layout') ?>
@@ -28,38 +26,21 @@ $lokasi = null
         </nav>
     </div>
 
-    <form id="content" class="bg-white p-3" method="POST" accept-charset="utf-8" action="http://localhost:8080/barang_add">
+    <form id="content" class="bg-white p-3" method="POST" accept-charset="utf-8" action="https://ca68-2001-448a-40ab-1deb-f9c7-4839-d65a-4131.ap.ngrok.io/barangkeluar_add">
         <div class="form-row">
-            <div class="form-group col-md-9">
-                <label>
-                    Nama Barang
-                    <input class="form-control" type="text" name="nama_barang" value="<?= $nama_barang ?>">
-                </label>
-            </div>
-            <div class="form-row col-md-5 ">
-                <label>
-                    Jumlah
-                    <input class="form-control" type="text" name="stok" value="<?= $jumlah ?>">
-                </label>
-            </div>
-            <div class="form-row col-md-3  ">
-                <label>
-                    satuan
-                    <input class="form-control" type="text" name="satuan" value="<?= $satuan ?>">
-                </label>
-            </div>
-            <div class="form-row col-md-3  ">
-                <label>
-                    Tanggal
-                    <input class="form-control" type="date" name="tanggal" value="<?= $tanggal ?>">
-                </label>
-            </div>
             <div class="form-row col-md-3  ">
                 <label>
                     lokasi
                     <input class="form-control" type="text" name="lokasi" value="<?= $lokasi ?>">
                 </label>
             </div>
+            <div class="form-row col-md-3  ">
+                <label>
+                    tanggal
+                    <input class="form-control" type="date" name="tanggal" value="<?= $tanggal ?>">
+                </label>
+            </div>
+
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
