@@ -21,21 +21,27 @@ $satuan = null;
             </div>
         </nav>
     </div>
-    <form id="content" class="bg-white p-3" method="POST" accept-charset="utf-8" action="http://localhost:8080/edit_barang">
+    <form id="content" class="bg-white p-3 " method="POST" accept-charset="utf-8" action="">
         <div class="form-row">
+            <div class="form-group col-md-9">
+                <label>
+                    Kode Barang
+                    <input class="form-control" type="text" name="kode_barang" value="<?= $kode_barang ?>">
+                </label>
+            </div>
             <div class="form-group col-md-9">
                 <label>
                     Nama Barang
                     <input class="form-control" type="text" name="nama_barang" value="<?= $nama_barang ?>">
                 </label>
             </div>
-            <div class="form-row col-md-5 ">
+            <div class="form-row col-md-9 ">
                 <label>
                     Jumlah
                     <input class="form-control" type="text" name="stok" value="<?= $jumlah ?>">
                 </label>
             </div>
-            <div class="form-row col-md-3  ">
+            <div class="form-row col-md-9  ">
                 <label>
                     satuan
                     <input class="form-control" type="text" name="satuan" value="<?= $satuan ?>">

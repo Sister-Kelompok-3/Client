@@ -13,30 +13,29 @@ $kode_barang = null;
 </style>
 
 <div class="container-filed ">
-    <div class="row align-items-start">
-        <nav class="navbar bg-light container-fluid">
-            <div class="container-fluid mt-3">
-                <h2 class="navbar-brand text-primary">Beranda</h2>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary ml-2" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </div>
-    <form id="content" class="bg-white p-3" method="POST" accept-charset="utf-8" action="hhttp://localhost:8080/transaksi_add">
+<div class="grid">
+            <h1 class="m-3">
+                Tambah Transaksi
+            </h1>
+        </div>
+    <form id="content" class="bg-white p-3" method="POST" accept-charset="utf-8" action="http://192.168.236.158:8000/Komputer_server1/Server_1/public/transaksi_detail_add">
         <div class="form-row">
-
+            <div class="form-row col-md-5 ">
+                <label>
+                    Id Transaksi
+                    <input class="form-control" type="text" name="id_transaksi" value="<?= $id_transaksi ?>">
+                </label>
+            </div>
             <div class="form-row col-md-5 ">
                 <label>
                     kode barang
-                    <input class="form-control" type="text" name="stok" value="<?= $kode_barang ?>">
+                    <input class="form-control" type="text" name="kode_barang" value="<?= $kode_barang ?>">
                 </label>
             </div>
             <div class="form-row col-md-3  ">
                 <label>
                     jumlah
-                    <input class="form-control" type="text" name="satuan" value="<?= $jumlah ?>">
+                    <input class="form-control" type="text" name="jumlah" value="<?= $jumlah ?>">
                 </label>
             </div>
         </div>

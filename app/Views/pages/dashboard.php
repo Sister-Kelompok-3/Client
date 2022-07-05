@@ -7,9 +7,9 @@
     }
 </style>
 <?php
-$konten = file_get_contents('http://localhost:8080/barang');
-$data = json_decode($konten, true);
-// var_dump($konten);
+$server1 = 'http://192.168.236.158:8000/Komputer_server1/Server_1/public';
+$detail = file_get_contents($server1 . "/barang");
+$data = json_decode($detail, true);
 
 ?>
 <div class="container-filed ">
