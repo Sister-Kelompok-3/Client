@@ -8,32 +8,38 @@
 </style>
 <?php
 $server1 = 'http://192.168.236.158:8000/Komputer_server1/Server_1/public';
-$detail = file_get_contents($server1 . "/barang_masuk");
+$detail = file_get_contents($server1 . "/transaksi_detail" . $slug);
 $data = json_decode($detail, true);
-
 ?>
+
+<!-- DETAIL PERBARANGD -->
+
 <div class="container-filed ">
     <div class="row content bg-white p-2 ">
-        <div class="d-block">
+        <div class="grid">
             <h2 class="m-3">
                 Daftar Transaksi Masuk
             </h2>
-                <a href="/detail_transaksi_masuk">
+            <div class="ml-3  d-grid gap-2 d-md-block">
+                <a href="/form_transaksi_masuk">
                     <button class="btn btn-primary" type="button">
-                        Detail
+                        <span class="material-symbols-outlined">
+                            create
+                        </span>
                     </button>
                 </a>
-            
+
+            </div>
         </div>
 
         <div class="row overflow-auto container" style="height: 50vh;">
             <table class="table table-hover ">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th>#</th>
                         <th>Id Transaksi</th>
-                        <th>Tanggal </th>
-                        <th>Lokasi</th>
+                        <th>Kode Barang</th>
+                        <th>Jumlah</th>
                         <th>
                             Action
                         </th>
@@ -47,8 +53,8 @@ $data = json_decode($detail, true);
                         <tr>
                             <th><?= $no++; ?></th>
                             <td><?php echo $row['id_transaksi'] ?></td>
-                            <td><?php echo $row['tanggal'] ?></td>
-                            <td><?php echo $row['lokasi'] ?></td>
+                            <td><?php echo $row['kode_barang'] ?></td>
+                            <td><?php echo $row['jumlah'] ?></td>
                             <td>
                                 <button class="btn btn-warning" type="button">
                                     <span class="material-symbols-outlined">

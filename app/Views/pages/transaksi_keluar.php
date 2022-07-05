@@ -13,21 +13,10 @@ $data = json_decode($detail, true);
 // var_dump($konten);
 ?>
 <div class="container-filed ">
-    <div class="row align-items-start">
-        <nav class="navbar bg-light container-fluid">
-            <div class="container-fluid mt-3">
-                <h2 class="navbar-brand text-primary">Beranda</h2>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary ml-2" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </div>
     <div class="row content bg-white p-2 ">
         <div class="grid">
             <h2 class="m-3">
-                Daftar Transaksi
+                Daftar Transaksi Keluar
             </h2>
             <div class="ml-3  d-grid gap-2 d-md-block">
                 <a href="/tambah_transaksi_keluar">
@@ -46,6 +35,8 @@ $data = json_decode($detail, true);
                     <tr>
                         <th>#</th>
                         <th>Id Transaksi</th>
+                        <th>Kode Barang</th>
+                        <th>Jumlah</th>
                         <th>Tanggal</th>
                         <th>Lokasi</th>
                         <th>
@@ -61,19 +52,24 @@ $data = json_decode($detail, true);
                         <tr>
                             <th><?= $no++; ?></th>
                             <td><?php echo $row['id_transaksi'] ?></td>
+                            <td><?php echo $row['kode_barang'] ?></td>
+                            <td><?php echo $row['jumlah'] ?></td>
                             <td><?php echo $row['tanggal'] ?></td>
                             <td><?php echo $row['lokasi'] ?></td>
                             <td>
-                                <button class="btn btn-warning" type="button">
-                                    <span class="material-symbols-outlined">
-                                        edit_note
-                                    </span>
-                                </button>
-                                <button class="btn btn-danger" type="button">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
+                                <a href="#>" method="post">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btn btn-warning m-1 alert_notif" type="submit">
+                                        Edit
+                                    </button>
+                                </a>
+                                <a href="http://192.168.236.177/Server2/server2/public/barangkeluar_delete/<?= $row['id_transaksi']; ?>" method="post">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btn btn-danger m-1 alert_notif" type="submit">
+                                        Delete
+                                    </button>
+                                </a>
+                                
                             </td>
                         </tr>
                     <?php } ?>

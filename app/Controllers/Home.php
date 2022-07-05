@@ -34,8 +34,16 @@ class Home extends BaseController
     {
         return view('pages/FormAdd_transaksi_masuk');
     }
+    public function detail_transaksi_masuk()
+    {
+        return view('pages/detail_transaksi');
+    }
     public function add_transaksi_keluar()
     {
         return view('pages/tambah_transaksi_keluar');
+    }
+    public function update_barang()
+    {
+        return view('pages/edit_barang');
     }
 }

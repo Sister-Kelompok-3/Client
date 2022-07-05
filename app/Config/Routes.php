@@ -42,7 +42,9 @@ $routes->get('/transaksi_masuk', 'Home::transaksi_masuk');
 $routes->get('/transaksi_keluar', 'Home::transaksi_keluar');
 $routes->get('/form_barang', 'Home::tambah_barang');
 $routes->get('/form_transaksi_masuk', 'Home::add_transaksi_masuk');
+$routes->get('/detail_transaksi_masuk', 'Home::detail_transaksi_masuk');
 $routes->get('/tambah_transaksi_keluar', 'Home::add_transaksi_keluar');
+$routes->get('/update_barang', 'Home::update_barang');
 
 
 
