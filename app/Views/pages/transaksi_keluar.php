@@ -7,8 +7,9 @@
     }
 </style>
 <?php
-$konten = file_get_contents('http://localhost:8080/barang');
-$data = json_decode($konten, true);
+$server2 = 'http://192.168.236.177/Server2/server2/public';
+$detail = file_get_contents($server2 . "/barangkeluar");
+$data = json_decode($detail, true);
 // var_dump($konten);
 ?>
 <div class="container-filed ">
@@ -26,10 +27,10 @@ $data = json_decode($konten, true);
     <div class="row content bg-white p-2 ">
         <div class="grid">
             <h2 class="m-3">
-                Daftar Barang
+                Daftar Transaksi
             </h2>
             <div class="ml-3  d-grid gap-2 d-md-block">
-                <a href="/form_barang">
+                <a href="/tambah_transaksi_keluar">
                     <button class="btn btn-primary" type="button">
                         <span class="material-symbols-outlined">
                             create_new_folder
@@ -43,37 +44,36 @@ $data = json_decode($konten, true);
             <table class="table table-hover ">
                 <thead>
                     <tr>
-                        <th class="th-sm">#</th>
-                        <th>Nama Barang</th>
-                        <th>Satuan</th>
-                        <th>Stok</th>
-                        <th>Action</th>
+                        <th>#</th>
+                        <th>Id Transaksi</th>
+                        <th>Tanggal</th>
+                        <th>Lokasi</th>
+                        <th>
+                            Action
+                        </th>
                     </tr>
                 </thead>
-
                 <tbody">
                     <?php
                     $no = 1;
-                    foreach ($data['barang'] as $row) { ?>
+                    foreach ($data['id_transaksi'] as $row) {
+                    ?>
                         <tr>
-                            <th> <?= $no++; ?></th>
-                            <td><?php echo $row['nama_barang'] ?></td>
-                            <td><?php echo $row['satuan'] ?></td>
-                            <td><?php echo $row['stok'] ?></td>
-                            <td class="d-flex">
-                                <form action="#<?= $row['kode_barang']; ?>" method="post">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button class="btn btn-warning m-1" type="submit">
-                                        Edit
-                                    </button>
-                                </form>
-                                <form action="http://localhost:8080/barang_delete/<?= $row['kode_barang']; ?>" method="post">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button class="btn btn-danger m-1 alert_notif" type="submit">
-                                        Delete
-                                    </button>
-                                </form>
-                            
+                            <th><?= $no++; ?></th>
+                            <td><?php echo $row['id_transaksi'] ?></td>
+                            <td><?php echo $row['tanggal'] ?></td>
+                            <td><?php echo $row['lokasi'] ?></td>
+                            <td>
+                                <button class="btn btn-warning" type="button">
+                                    <span class="material-symbols-outlined">
+                                        edit_note
+                                    </span>
+                                </button>
+                                <button class="btn btn-danger" type="button">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
                             </td>
                         </tr>
                     <?php } ?>
@@ -82,4 +82,6 @@ $data = json_decode($konten, true);
         </div>
     </div>
 </div>
+
+
 <?= $this->endSection() ?>

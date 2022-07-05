@@ -13,7 +13,7 @@ class Barang extends ResourceController
     {
         $get_url = file_get_contents("localhost:8080/barang");
         $data = json_decode($get_url);
-
+        $server1 = 
         $data_array = array(
             'datalist' => $data
         );
@@ -23,7 +23,7 @@ class Barang extends ResourceController
     // create
     public function create()
     {
-<<<<<<< HEAD
+
         if (isset($_POST['submit'])) {
             $data = array(
                 'nama_barang'      =>  $this->input->post('nama_barang'),
@@ -39,33 +39,6 @@ class Barang extends ResourceController
             redirect('barang');
         } else {
             $this->load->view('home/page');
-=======
-        $model = new BarangModel();
-        $data = [
-            'nama_barang'   => $this->request->getVar('nama_barang'),
-            'satuan'        => $this->request->getVar('satuan'),
-            'stok'          => $this->request->getVar('stok'),
-        ];
-        $model->insert($data);
-        $response = [
-            'status'    => 201,
-            'error'    => null,
-            'messages' => [
-                'success' => 'Data produk berhasil ditambahkan.'
-            ]
-        ];
-        return $this->respondCreated($response);
-    }
-    // single user
-    public function show($kode_barang = null)
-    {
-        $model = new BarangModel();
-        $data = $model->getWhere(['kode_barang'], $kode_barang)->first();
-        if ($data) {
-            return $this->respond($data);
-        } else {
-            return $this->failNotFound('Data tidak ditemukan.');
->>>>>>> f4c77cd8f43d685742b595aacedc08525682ec85
         }
     }
     // update

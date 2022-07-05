@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/transaksi" class="nav-link btn-outline-primary ">
+                    <a href="/transaksi_masuk" class="nav-link btn-outline-primary ">
                         <span class="material-symbols-outlined">
                             list_alt
                         </span>
@@ -47,7 +47,7 @@
                 </li>
                 <li class="nav-item ">
                 <li class="nav-item">
-                    <a href="/transaksi" class="nav-link btn-outline-primary ">
+                    <a href="/transaksi_keluar" class="nav-link btn-outline-primary ">
                         <span class="material-symbols-outlined">
                             exit_to_app
                         </span>
